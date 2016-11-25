@@ -11,7 +11,7 @@ function LunchCheckController($scope) {
     $scope.myMessage="";
 
     $scope.feedDishes = function() {
-        $count = ($scope.dishes.split(",").length - 1)
+        $count = ($scope.dishes.split(",").length - 1);
         if ( $count == 0) {
             $scope.myMessage = 'Please enter data first';
         } else if ( $count <= 3) {
