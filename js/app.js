@@ -7,11 +7,11 @@ angular.module('LunchCheck',[])
 
 LunchCheckController.$inject = ['scope'];
 function LunchCheckController($scope) {
-    $scope.dishes="sss,ddd";
+    $scope.dishes="";
     $scope.myMessage="";
 
     $scope.feedDishes = function() {
-        var $count = ($scope.dishes.split(",").length - 1);
+        $count = ($scope.dishes.split(",").length - 1);
         console.log($count);
         if ( $count == 0) {
             $scope.myMessage = 'Please enter data first';
