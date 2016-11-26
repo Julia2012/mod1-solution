@@ -5,17 +5,19 @@ angular.module('LunchCheck',[])
 
 .controller('LunchCheckController', LunchCheckController);
 
-LunchCheckController.$inject = ['scope'];
-function LunchCheckController($scope) {
-    $scope.dishes="";
-    $scope.myMessage="";
+LunchCheckController.$inject = ['$scope'];
 
+function LunchCheckController($scope) {
+    $scope.dishes = '';
+    $scope.count = 0;
+    
     $scope.feedDishes = function() {
-        $count = ($scope.dishes.split(",").length - 1);
-        console.log($count);
-        if ( $count == 0) {
+        
+        $scope.count = ($scope.dishes.split(",").length);
+        console.log($scope.count);
+        if ( $scope.dishes == '') {
             $scope.myMessage = 'Please enter data first';
-        } else if ( $count <= 3) {
+        } else if ( $scope.count <= 3) {
             $scope.myMessage = 'Enjoy!';
         } else {
             $scope.myMessage = 'Too much!';
