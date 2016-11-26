@@ -13,6 +13,8 @@ function LunchCheckController($scope) {
     
     $scope.feedDishes = function() {
         
+        $scope.dishes = $scope.dishes.replace(/,*\s*$/g,"");
+        
         $scope.count = ($scope.dishes.split(",").length);
         console.log($scope.count);
         if ( $scope.dishes == '') {
